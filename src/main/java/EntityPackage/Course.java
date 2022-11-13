@@ -1,3 +1,7 @@
+package EntityPackage;
+
+import EnumPackage.CertificationEnum;
+
 import java.util.List;
 
 public class Course {

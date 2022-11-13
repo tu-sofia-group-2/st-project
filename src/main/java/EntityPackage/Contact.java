@@ -1,3 +1,7 @@
+package EntityPackage;
+
+import EnumPackage.ContactTypeEnum;
+
 public class Contact {
     private long ID;
     private ContactTypeEnum type;

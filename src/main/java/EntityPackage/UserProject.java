@@ -1,3 +1,5 @@
+package EntityPackage;
+
 public class UserProject {
     private Long ID;
     private Project project;

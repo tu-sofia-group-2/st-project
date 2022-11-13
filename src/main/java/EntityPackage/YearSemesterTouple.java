@@ -1,3 +1,5 @@
+package EntityPackage;
+
 public class YearSemesterTouple {
     private int year;
     private int semester;

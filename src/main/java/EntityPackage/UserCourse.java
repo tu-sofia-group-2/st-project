@@ -1,3 +1,7 @@
+package EntityPackage;
+
+import EnumPackage.CourseRoleEnum;
+
 import java.util.List;
 
 public class UserCourse {

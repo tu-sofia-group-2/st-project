@@ -1,3 +1,7 @@
+package EntityPackage;
+
+import EnumPackage.UserProgrammeStateEnum;
+
 public class UserProgramme {
     private Long ID;
     private User user;

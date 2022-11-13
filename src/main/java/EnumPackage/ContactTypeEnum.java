@@ -1,3 +1,5 @@
+package EnumPackage;
+
 public enum ContactTypeEnum {
     EMAIL,
     PHONE_NUMBER,

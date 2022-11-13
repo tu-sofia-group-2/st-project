@@ -1,3 +1,7 @@
+package EntityPackage;
+
+import EnumPackage.CertificationEnum;
+
 public class CertificationUser {
     private Long ID;
     private Course course;

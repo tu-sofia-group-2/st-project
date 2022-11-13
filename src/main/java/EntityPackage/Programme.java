@@ -1,3 +1,7 @@
+package EntityPackage;
+
+import EnumPackage.DegreeEnum;
+
 import java.util.List;
 
 public class Programme {

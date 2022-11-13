@@ -1,3 +1,5 @@
+package EnumPackage;
+
 public enum CourseRoleEnum {
     LECTURER,
     ASSISTANT,

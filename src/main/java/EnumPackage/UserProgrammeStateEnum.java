@@ -1,3 +1,5 @@
+package EnumPackage;
+
 public enum UserProgrammeStateEnum {
     IN_PROGRESS,
     GRADUATED,

@@ -1,3 +1,5 @@
+package EntityPackage;
+
 import java.util.List;
 
 public class Faculty {
