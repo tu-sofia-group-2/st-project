@@ -67,7 +67,7 @@ NB : Очаквана е възможна интеграция със вече �
 
 
 
-* EntityPackage.User details page
+* User details page
 
 **Technical tasks by feature point/sub-point/sub-sub-point..:**
 
@@ -122,7 +122,7 @@ Backend should be divided into three layers:
 
 **<span style="text-decoration:underline;">ENTITIES / DATA LAYER</span>**
 
-**EntityPackage.User:**
+**User:**
 
 
 
@@ -132,11 +132,11 @@ Backend should be divided into three layers:
 * **lastName - String **
 * **middleName - String **
 * **gender - int // Needed to be bool**
-* **programmes - List&lt;EntityPackage.UserProgramme> //can be null if only teacher**
-* **contacts - List&lt;EntityPackage.Contact>**
-* **role - EntityPackage.Role**
+* **programmes - List&lt;UserProgramme> //can be null if only teacher**
+* **contacts - List&lt;Contact>**
+* **role - Role**
 
-**EntityPackage.Role:**
+**Role:**
 
 
 
@@ -144,29 +144,29 @@ Backend should be divided into three layers:
 * **name - String**
 * **permissions - List&lt;String>**
 
-**EntityPackage.UserProgramme:**
+**UserProgramme:**
 
 
 
 * **id - long**
-* **user - EntityPackage.User**
-* **programme - EntityPackage.Programme**
-* **state - EnumPackage.UserProgrammeStateEnum**
+* **user - User**
+* **programme - Programme**
+* **state - UserProgrammeStateEnum**
 * **semester - int**
 * **minor - boolean // as an additional co-programme**
-* **startedOn - EntityPackage.YearSemesterTouple**
+* **startedOn - YearSemesterTouple**
 * **startedFrom - int //from which semester**
 
-**// EntityPackage.User might have switched programmes, and/or moved from other universities and continues their studies in this uni**
+**// User might have switched programmes, and/or moved from other universities and continues their studies in this uni**
 
-**EntityPackage.YearSemesterTouple:**
+**YearSemesterTouple:**
 
 
 
 * **year - int**
 * **semester - int**
 
-**EnumPackage.UserProgrammeStateEnum:**
+**UserProgrammeStateEnum:**
 
 
 
@@ -175,7 +175,7 @@ Backend should be divided into three layers:
 * **DROPPED_OUT**
 * **UNKNOWN**
 
-**EnumPackage.DegreeEnum:**
+**DegreeEnum:**
 
 
 
@@ -184,7 +184,7 @@ Backend should be divided into three layers:
 * **PHD**
 * **NONE**
 
-**EntityPackage.Programme:**
+**Programme:**
 
 
 
@@ -192,21 +192,21 @@ Backend should be divided into three layers:
 * **name - String**
 * **description - String**
 * **semester - int**
-* **faculty - EntityPackage.Faculty**
-* **degree - EnumPackage.DegreeEnum **
+* **faculty - Faculty**
+* **degree - DegreeEnum **
 * **duration - int // in semesters**
-* **extensionOf - EntityPackage.Programme // could be null**
-* **userProgrammes - List&lt;EntityPackage.UserProgramme>**
-* **courses - List&lt;EntityPackage.Course>**
+* **extensionOf - Programme // could be null**
+* **userProgrammes - List&lt;UserProgramme>**
+* **courses - List&lt;Course>**
 
-**// EntityPackage.Programme could be a:**
+**// Programme could be a:**
 
 
 
-* **//Standard EntityPackage.Programme **
-* **//Custom EntityPackage.Programme as an extension of a Standard programme**
+* **//Standard Programme **
+* **//Custom Programme as an extension of a Standard programme**
 
-**EntityPackage.Course:**
+**Course:**
 
 
 
@@ -214,24 +214,24 @@ Backend should be divided into three layers:
 * **courseId - long**
 * **name - String**
 * **description - String**
-* **programme - EntityPackage.Programme**
+* **programme - Programme**
 * **semester - int**
-* **users - List&lt;EntityPackage.UserCourse>**
-* **messages - List&lt;EntityPackage.Message>**
-* **formOfControl - List&lt;EnumPackage.CertificationEnum>**
-* **project - EntityPackage.Project //can be null**
+* **users - List&lt;UserCourse>**
+* **messages - List&lt;Message>**
+* **formOfControl - List&lt;CertificationEnum>**
+* **project - Project //can be null**
 
-**EntityPackage.CertificationUser**
+**CertificationUser**
 
 
 
 * **id - long**
-* **course - EntityPackage.Course**
-* **user - EntityPackage.User**
-* **type - EnumPackage.CertificationEnum**
+* **course - Course**
+* **user - User**
+* **type - CertificationEnum**
 * **taken - boolean **
 
-**EnumPackage.CertificationEnum:**
+**CertificationEnum:**
 
 
 
@@ -240,33 +240,33 @@ Backend should be divided into three layers:
 * **LABS**
 * **COURSE_WORK**
 
-**EntityPackage.Project:**
+**Project:**
 
 
 
 * **id - long**
-* **course - EntityPackage.Course**
-* **users - List&lt;EntityPackage.UserProject>**
+* **course - Course**
+* **users - List&lt;UserProject>**
 
-**EntityPackage.UserProject:**
+**UserProject:**
 
 
 
 * **id - long **
-* **project - EntityPackage.Project**
-* **user - EntityPackage.User**
+* **project - Project**
+* **user - User**
 
-**EntityPackage.UserCourse:**
+**UserCourse:**
 
 
 
-* **user - EntityPackage.User**
-* **course - EntityPackage.Course**
-* **courseRole - EnumPackage.CourseRoleEnum**
+* **user - User**
+* **course - Course**
+* **courseRole - CourseRoleEnum**
 * **year - int // astronomical year**
-* **certifications - List&lt;EntityPackage.CertificationUser> **
+* **certifications - List&lt;CertificationUser> **
 
-**EnumPackage.CourseRoleEnum:**
+**CourseRoleEnum:**
 
 
 
@@ -276,33 +276,33 @@ Backend should be divided into three layers:
 * **TEACHER**
 * **GUEST_TEACHER**
 
-**EntityPackage.Message:**
+**Message:**
 
 
 
 * **id - long**
-* **postedBy - EntityPackage.User**
+* **postedBy - User**
 * **body - String**
 * **postedOn - Date**
 
-**EntityPackage.Faculty**
+**Faculty**
 
 
 
 * **id **
 * **Name**
 * **Description**
-* **contacts - List&lt;EntityPackage.Contact> **
+* **contacts - List&lt;Contact> **
 
-**EntityPackage.Contact **
+**Contact **
 
 
 
 * **id - long**
-* **type - EnumPackage.ContactTypeEnum**
+* **type - ContactTypeEnum**
 * **body - String**
 
-**EnumPackage.ContactTypeEnum**
+**ContactTypeEnum**
 
 
 
@@ -326,7 +326,7 @@ Backend should be divided into three layers:
 
 * **For all entities except Enums **
 * **Should feature methods that filter DB entries via the filters in the service layer**
-    * **EntityPackage.User can either be taken with Id **
+    * **User can either be taken with Id **
     * **Users can be filtered by the facultyId (факултетен номер)**
     * **Users can be filtered by the programme they are studying in**
     * **Users can be filtered by the course they are taking**
@@ -354,10 +354,10 @@ Backend should be divided into three layers:
 
 * **api/v1/users/current**
 * **PUT api/v1/users**
-    * **EntityPackage.User:**
+    * **User:**
         * **… //**
 * **POST api/v1/users**
-    * **EntityPackage.User:**
+    * **User:**
         * **… //**
 * **api/v1/users/{userId} // GET**
 * **api/v1/users **
