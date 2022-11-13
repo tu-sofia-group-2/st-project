@@ -6,60 +6,57 @@ public class User {
     private String lastName;
     private Long ID;
     private Long facultyID;
-
     private Boolean gender;
-
     private List<UserProgramme> programmes;
-
     private List<Contact> contacts;
-
     private Role role;
+    public User(String firstName, String middleName, String lastName, Long ID, Long facultyID, Boolean gender, List<UserProgramme> programmes, List<Contact> contacts, Role role) {
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.ID = ID;
+        this.facultyID = facultyID;
+        this.gender = gender;
+        this.programmes = programmes;
+        this.contacts = contacts;
+        this.role = role;
+    }
 
-    // Getter
     public Long getUserID() {
         return this.ID;
     }
 
-    // Setter
     public void setUserID(Long ID) {
         this.ID = ID;
     }
 
-    // Getter
     public Long getFacultyID() {
         return this.facultyID;
     }
 
-    // Setter
     public void setFacultyID(Long ID) {
         this.facultyID = ID;
     }
-    // Getter
     public String getFirstName() {
         return this.firstName;
     }
 
-    // Setter
     public void setFirstName(String newName) {
         this.firstName = newName;
     }
 
-    // Getter
     public String getMiddleName() {
         return this.middleName;
     }
 
-    // Setter
     public void setMiddleName(String newName) {
         this.middleName = newName;
     }
 
-    // Getter
     public String getLastName() {
         return this.lastName;
     }
 
-    // Setter
     public void setLastName(String newName) {
         this.lastName = newName;
     }

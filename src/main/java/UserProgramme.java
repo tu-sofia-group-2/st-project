@@ -8,6 +8,17 @@ public class UserProgramme {
     private YearSemesterTouple startedOn;
     private int startedFrom;
 
+    public UserProgramme(Long ID, User user, Programme programme, UserProgrammeStateEnum state, int semester, Boolean minor, YearSemesterTouple startedOn, int startedFrom) {
+        this.ID = ID;
+        this.user = user;
+        this.programme = programme;
+        this.state = state;
+        this.semester = semester;
+        this.minor = minor;
+        this.startedOn = startedOn;
+        this.startedFrom = startedFrom;
+    }
+
     public Long getID() {
         return ID;
     }

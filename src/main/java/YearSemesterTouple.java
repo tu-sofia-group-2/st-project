@@ -2,6 +2,11 @@ public class YearSemesterTouple {
     private int year;
     private int semester;
 
+    public YearSemesterTouple(int year, int semester) {
+        this.year = year;
+        this.semester = semester;
+    }
+
     public int getYear() {
         return year;
     }
