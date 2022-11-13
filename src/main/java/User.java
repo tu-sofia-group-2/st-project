@@ -1,8 +1,10 @@
+import java.util.List;
+
 public class User {
     private String firstName;
     private String middleName;
     private String lastName;
-    private Long userID;
+    private Long ID;
     private Long facultyID;
 
     private Boolean gender;
@@ -15,12 +17,12 @@ public class User {
 
     // Getter
     public Long getUserID() {
-        return this.userID;
+        return this.ID;
     }
 
     // Setter
     public void setUserID(Long ID) {
-        this.userID = ID;
+        this.ID = ID;
     }
 
     // Getter
