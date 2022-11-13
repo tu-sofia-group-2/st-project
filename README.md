@@ -19,7 +19,7 @@
 
 **Start iOS: npm run ios**
 
-**Start storybook: npm run storybook **
+**Start storybook: npm run storybook**
 
 **Синтез на основната идея:**
 
@@ -403,17 +403,17 @@ Backend should be divided into three layers:
 
 **Basic load, save and update services and repositories by is**
 
-**Implement entities and generate database schema **
+**Implement entities and generate database schema**
 
-**Sprint two: Generate page layouts from basic components using storybook **
+**Sprint two: Generate page layouts from basic components using storybook**
 
-**Create new endpoints with custom filters for most fields in entities **
+**Create new endpoints with custom filters for most fields in entities**
 
-**Sprint three: Link pages to backend in wrapper components that dictate state **
+**Sprint three: Link pages to backend in wrapper components that dictate state**
 
 **Link all pages in one cohesive app**
 
-**Test backend with Mockito and JUnite where needed **
+**Test backend with Mockito and JUnite where needed**
 
 **Test front end backend integration (integration testing)**
 
@@ -421,10 +421,14 @@ Backend should be divided into three layers:
 
 **Build webapp in react.js that includes admin operations like adding users, modifying users and so on**
 
-**Create schedule page and components **
+**Create schedule page and components**
 
-**Create DMs like an email provider **
+**Create DMs like an email provider**
 
-**NB changes might be applied during development like simplification of database schema or modification of page layouts **
+**NB changes might be applied during development like simplification of database schema or modification of page layouts**
 
 Всичко друго ще бъде разпределено в gitlab/github + този документ ще бъде конвертиран към .md файл който ще седи в репото 
+
+Useful links:
+* **https://imagecolorpicker.com/color-code/2596be**
+* **https://oblador.github.io/react-native-vector-icons/**
