@@ -11,6 +11,8 @@
 * **nvm  install 16.18.1**
 * **nvm  use 16.18.1**
 
+**https://github.com/coreybutler/nvm-windows#installation--upgrades**
+
 **Install nvm if version is higher and change it to 16.18.1**
 
 **Start web : npm run web**
