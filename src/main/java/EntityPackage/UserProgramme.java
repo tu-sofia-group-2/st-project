@@ -2,18 +2,37 @@ package EntityPackage;
 
 import EnumPackage.UserProgrammeStateEnum;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "user_programmes")
 public class UserProgramme {
+    @Id
+    @GeneratedValue
     private Long ID;
+
+    @Column(nullable = false, name = "user")
     private User user;
+
+    @Column(nullable = false, name = "programme")
     private Programme programme;
+
+    @Column(nullable = false, name = "state")
     private UserProgrammeStateEnum state;
+
+    @Column(name = "semester")
     private int semester;
+
+    @Column(nullable = false, name = "minor")
     private Boolean minor;
+
+    @Column(nullable = false, name = "startedOn")
     private YearSemesterTouple startedOn;
     private int startedFrom;
 
-    public UserProgramme(Long ID, User user, Programme programme, UserProgrammeStateEnum state, int semester, Boolean minor, YearSemesterTouple startedOn, int startedFrom) {
-        this.ID = ID;
+    protected UserProgramme() {}
+
+    public UserProgramme(User user, Programme programme, UserProgrammeStateEnum state, int semester, Boolean minor, YearSemesterTouple startedOn, int startedFrom) {
         this.user = user;
         this.programme = programme;
         this.state = state;
@@ -25,10 +44,6 @@ public class UserProgramme {
 
     public Long getID() {
         return ID;
-    }
-
-    public void setID(Long ID) {
-        this.ID = ID;
     }
 
     public User getUser() {

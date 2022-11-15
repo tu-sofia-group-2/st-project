@@ -1,22 +1,44 @@
 package EntityPackage;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "users")
 public class User {
-    private String firstName;
-    private String middleName;
-    private String lastName;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long ID;
+
+    @Column(nullable = false, length = 20)
+    private String firstName;
+
+    @Column(nullable = false, length = 20)
+    private String middleName;
+
+    @Column(nullable = false, length = 20)
+    private String lastName;
+
+    @Column(nullable = false, length = 20)
     private Long facultyID;
+
+    @Column(nullable = false)
     private Boolean gender;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<UserProgramme> programmes;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Contact> contacts;
+
+    @Column(nullable = false)
     private Role role;
-    public User(String firstName, String middleName, String lastName, Long ID, Long facultyID, Boolean gender, List<UserProgramme> programmes, List<Contact> contacts, Role role) {
+
+    protected User() {}
+    public User(String firstName, String middleName, String lastName, Long facultyID, Boolean gender, List<UserProgramme> programmes, List<Contact> contacts, Role role) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
-        this.ID = ID;
         this.facultyID = facultyID;
         this.gender = gender;
         this.programmes = programmes;
@@ -26,10 +48,6 @@ public class User {
 
     public Long getUserID() {
         return this.ID;
-    }
-
-    public void setUserID(Long ID) {
-        this.ID = ID;
     }
 
     public Long getFacultyID() {
