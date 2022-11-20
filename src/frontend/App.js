@@ -1,21 +1,328 @@
-import { StatusBar } from 'expo-status-bar';
-export {default} from "./storybook";
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
+import { ScrollView } from "react-native-gesture-handler";
+import { SUBJECTS_LIST_MOCK, SUBJECT_LIST_RENDERER_MOCK } from "./test/SubjectsMockDataConstants";
+import DraggableModal from "./components/util/DraggableModal";
+import SubjectsList from "./components/subjects/SubjectsList";
+import SubjectListRenderer from "./components/subjects/SubjectListRenderer";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+return <View style={styles.container}>
+  <View>
+      <SubjectListRenderer data={SUBJECT_LIST_RENDERER_MOCK} onPress={()=>{setIsModalOpen(true)}} type={"student"}/>
+      </View>
+      <DraggableModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
+          <ScrollView style={{alignSelf:"center", width: "100%"}}>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View><View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View><View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View><View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View><View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+            <View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View><View>
+              <Text style={{fontWeight:"bold", }}>
+                hi
+              </Text>
+            </View>
+          </ScrollView>
+      </DraggableModal>
     </View>
-  );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    width: "100%",
+    padding: "3%",
+    backgroundColor: '#f2f2f2',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
