@@ -1,8 +1,8 @@
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, Platform } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const ICON_SIZE = 15;
+const ICON_SIZE = (Platform.OS === "web" ? 25 : 15);
 
 const SubjectBarMinimised = ({ name, labs, project, courseWork, seminars, lectures, onPress, type, index, subIndex }) => {
 
@@ -94,7 +94,9 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-evenly",
         alignContent: "space-around",
-        margin: "auto"
+        margin: "auto",
+        alignSelf: "flex-end",
+        alignItems: "stretch"
     }
 })
 

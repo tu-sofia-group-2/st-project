@@ -39,4 +39,34 @@ export const SUBJECT_LIST_RENDERER_MOCK = [
         header: "Y3 Winter",
         subjects: SUBJECTS_LIST_MOCK
     },
+    {
+        id: 4,
+        header: "Y2 Winter",
+        subjects: SUBJECTS_LIST_MOCK
+    },
+    {
+        id: 5,
+        header: "Y2 Summer",
+        subjects: SUBJECTS_LIST_MOCK
+    },
+    {
+        id: 6,
+        header: "Y3 Winter",
+        subjects: SUBJECTS_LIST_MOCK
+    },
+    {
+        id: 7,
+        header: "Y2 Winter",
+        subjects: SUBJECTS_LIST_MOCK
+    },
+    {
+        id: 8,
+        header: "Y2 Summer",
+        subjects: SUBJECTS_LIST_MOCK
+    },
+    {
+        id: 9,
+        header: "Y3 Winter",
+        subjects: SUBJECTS_LIST_MOCK
+    },
 ];

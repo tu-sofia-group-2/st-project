@@ -18,12 +18,6 @@ const DraggableModal = (props) => {
 };
 
 const styles = StyleSheet.create({
-    topBar: {
-        height: "10%",
-        borderTopRightRadius: "50px",
-        borderTopLeftRadius: "50px",
-
-    },
     modal: {
         width: "100%",
         height: "100%",

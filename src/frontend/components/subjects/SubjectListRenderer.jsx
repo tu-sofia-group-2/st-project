@@ -20,6 +20,8 @@ const SubjectListRenderer = ({ data, type, onPress }) => {
                 data={data}
                 renderItem={item => renderItem(item)}
                 keyExtractor={item => item.id}
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
             />
         }
     </View>)
@@ -27,3 +29,4 @@ const SubjectListRenderer = ({ data, type, onPress }) => {
 }
 
 export default SubjectListRenderer;
+
