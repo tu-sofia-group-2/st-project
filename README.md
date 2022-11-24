@@ -434,3 +434,5 @@ Backend should be divided into three layers:
 Useful links:
 * **https://imagecolorpicker.com/color-code/2596be**
 * **https://oblador.github.io/react-native-vector-icons/**
+* **https://reactnative.dev/docs/new-architecture-app-intro --> gradle за splash screen
+* **https://www.npmjs.com/package/react-native-skeleton-content --> sceletons for animation of text when loading 
