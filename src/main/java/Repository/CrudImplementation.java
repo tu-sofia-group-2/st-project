@@ -1,7 +1,14 @@
 package Repository;
 
-public class CrudImplementation implements CrudRepository {
-    
+import java.util.ArrayList;
+import java.util.List;
+
+public class CrudImplementation<T> implements CrudRepository {
+    List<T> objectsOfRepository = new ArrayList<T>();
+
+    public CrudImplementation(List<T> objectsOfRepository) {
+        this.objectsOfRepository = objectsOfRepository;
+    }
 
     @Override
     public Object save(Object entity) {
