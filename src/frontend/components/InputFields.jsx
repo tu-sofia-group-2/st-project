@@ -6,7 +6,7 @@ const InputFields = ({value, defaultText, active, error, onChange}) =>{
 
   const onChangeText=(data)=>{
     onChange(data);
-    console.log(value)
+    console.log(value);
   }
   const [GeneratedStyle, setGeneratedStyle] = useState(styles.input);
   const generateStyle = (error)=>{
@@ -20,6 +20,7 @@ const InputFields = ({value, defaultText, active, error, onChange}) =>{
   useEffect(()=>{
       const s = generateStyle(error);
       setGeneratedStyle(s);
+      console.log(error);
   },[error])
   
   return(
@@ -38,6 +39,7 @@ InputFields.defaultProps={
     defaultText: "",
     active: true,
     error: false,
+
 
 }
 const styles = StyleSheet.create({

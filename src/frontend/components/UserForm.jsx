@@ -1,14 +1,12 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, View } from 'react-native';
-import Button from "./button";
+import Button from "./Button";
 import InputFields from "./InputFields";
 import {CREATE, EDIT} from "../constants/UserModeTypesEnum"
 import { validateNumber } from "../util/Validations";
-const UserForm =({data, setSubmitData, mode, roles})=>{
-    const [id,setId] = useState(null);
-    const [errId, setErrId] = useState(false);
-    const [facultyId, setFacultyId] = useState(null);
-    const [errFacId, setErrFacId] = useState(false); 
+const UserForm =({data, setSubmitData, mode, roles, id, setId, errId, 
+    setErrId, facultyId, setFacultyId, errFacId, setErrFacId})=>{
+
     const onClick=()=>{
         //TODO validate fields, const obj, setSubmitData obj
         if(validateNumber(id) && validateNumber(facultyId)){
@@ -16,6 +14,7 @@ const UserForm =({data, setSubmitData, mode, roles})=>{
                 id: id,
                 facultyId: facultyId
             }
+            console.log(obj)
         }
         if(!validateNumber(id)){
             setErrId(true)

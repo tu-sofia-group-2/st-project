@@ -5,14 +5,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import Button from './components/Button';
 import InputFields from './components/InputFields';
 import UserForm from './components/UserForm';
+import UserFormWrapper from './components/UserFormWrapper';
 export default function App() {
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
       <Button label = {"Button"}></Button>
-      <InputFields defaultText = {"enter username"}></InputFields>
       {/* <StatusBar style="auto" /> */}
-      <UserForm></UserForm>
+      <UserFormWrapper/>
     </View>
   );
 }

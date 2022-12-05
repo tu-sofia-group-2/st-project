@@ -32,7 +32,7 @@ const Button = ({onClick, active, error, label, type})=>{
         setGeneratedStyle(s);
     },[type,error])
     return (
-        <TouchableOpacity disabled={!active} style={GeneratedStyle} onClick={()=>onClick()}>
+        <TouchableOpacity disabled={!active} style={GeneratedStyle} onPress={onClick}>
             <Text>{label}</Text>
         </TouchableOpacity>
     )
