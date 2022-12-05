@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { NORMAL, ACTIVE, WARNING, LOGIN } from "../constants/ButtonTypesEnum";
 
 const Button = ({onClick, active, error, label, type})=>{
+
     const [GeneratedStyle, setGeneratedStyle] = useState(styleButton.normal);
     const generateStyle = (error, type)=>{
         let warning = "";
@@ -32,7 +33,9 @@ const Button = ({onClick, active, error, label, type})=>{
         setGeneratedStyle(s);
     },[type,error])
     return (
+
         <TouchableOpacity disabled={!active} style={GeneratedStyle} onClick={()=>onClick()}>
+
             <Text>{label}</Text>
         </TouchableOpacity>
     )
@@ -40,6 +43,7 @@ const Button = ({onClick, active, error, label, type})=>{
 
 Button.defaultProps = {
     onClick: () => {},
+
     active: true,
     error: false,
     label: "",
