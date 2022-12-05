@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-export {default} from "./storybook";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Form from './components/form/Form';
+import { MOCK_DATA_UNEDITABLE } from './test/FormMockDataConstants';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Form data={MOCK_DATA_UNEDITABLE}/>
+      <TouchableOpacity/>
     </View>
   );
 }
