@@ -1,17 +1,15 @@
-package EntityPackage;
+package st.project.demo.entites;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 
-public class Role {
+public class UserProject {
     private Long ID;
-    private String name;
-    private List<String> permissions;
+    private Project project;
+    private User user;
 }

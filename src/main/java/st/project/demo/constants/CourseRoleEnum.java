@@ -1,4 +1,4 @@
-package EnumPackage;
+package st.project.demo.constants;
 
 public enum CourseRoleEnum {
     LECTURER,

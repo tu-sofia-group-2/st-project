@@ -1,9 +1,9 @@
-package EntityPackage;
+package st.project.demo.entites;
 
-import EnumPackage.CourseRoleEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import st.project.demo.constants.CourseRoleEnum;
 
 import java.util.List;
 @Getter
