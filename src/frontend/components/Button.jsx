@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { NORMAL, ACTIVE, WARNING, LOGIN } from "../constants/ButtonTypesEnum";
 
-const Button = ({OnClick, active, error, label, type})=>{
+const Button = ({onClick, active, error, label, type})=>{
+
     const [GeneratedStyle, setGeneratedStyle] = useState(styleButton.normal);
     const generateStyle = (error, type)=>{
         let warning = "";
@@ -32,14 +33,16 @@ const Button = ({OnClick, active, error, label, type})=>{
         setGeneratedStyle(s);
     },[type,error])
     return (
-        <TouchableOpacity disabled={!active} style={GeneratedStyle} OnClick={()=>OnClick()}>
+        <TouchableOpacity disabled={!active} style={GeneratedStyle} onPress={onClick}>
+
             <Text>{label}</Text>
         </TouchableOpacity>
     )
 }  
 
 Button.defaultProps = {
-    OnClick: () => {},
+    onClick: () => {},
+
     active: true,
     error: false,
     label: "",
