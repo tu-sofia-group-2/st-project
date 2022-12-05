@@ -1,11 +1,11 @@
 package st.project.demo.repositories;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import st.project.demo.entites.User;
 	
-public interface UserDao extends JpaRepository<Long, User> {
-	public List<User> getById(Long id);
+@Repository
+public interface UserDao extends JpaRepository<User, Long> {
+	public User getById(Long id);
 }
