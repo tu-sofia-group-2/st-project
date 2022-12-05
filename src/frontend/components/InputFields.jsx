@@ -32,6 +32,7 @@ const InputFields = ({value, defaultText, active, error, onChange}) =>{
       >
     </TextInput>
   )
+
 }
 
 InputFields.defaultProps={
@@ -49,6 +50,7 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       padding: 10,
     },
+
     error: {
       height: 40,
       margin: 12,
@@ -58,3 +60,4 @@ const styles = StyleSheet.create({
     }
   });
 export default InputFields;
+
