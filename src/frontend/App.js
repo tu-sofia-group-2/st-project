@@ -14,14 +14,16 @@ export default function App() {
       {/* <StatusBar style="auto" /> */}
       <UserFormWrapper/>
     </View>
-  );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    width: "100%",
+    padding: "3%",
+    backgroundColor: '#f2f2f2',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+    alignSelf:"center"
+  }
 });
