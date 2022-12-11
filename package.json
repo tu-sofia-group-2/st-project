@@ -1,0 +1,20 @@
+{
+  "name": "st-project",
+  "version": "1.0.0",
+  "description": "**Node.js version: 16.18.1 !!!**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tu-sofia-group-2/st-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tu-sofia-group-2/st-project/issues"
+  },
+  "homepage": "https://github.com/tu-sofia-group-2/st-project#readme"
+}
