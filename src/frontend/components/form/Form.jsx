@@ -6,9 +6,6 @@ import ScrollDetailsFormElement from "./ScrollDetailsFormElement";
 
 const Form = ({data, direction}) => {
     const horizontal = (direction === LAYOUT_ROW ? true : false);
-    // const styleRowCol = (direction === LAYOUT_ROW ? styles.row : styles.col);
-    // const generatedStyle = StyleSheet.compose(styleRowCol, styles.container);
-
 
     const mapData = (e) => {
             const dir = (direction === LAYOUT_ROW ? LAYOUT_COL : LAYOUT_ROW)
