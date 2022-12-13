@@ -1,7 +1,7 @@
 package Controller;
 
+import EntityPackage.User;
 import Service.UserService;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,12 +11,12 @@ public class UserController {
     @Autowired private UserService userService;
 
     @PostMapping("/users")
-    public void saveUser(@RequestBody User user) {
+    public void saveUser(@RequestBody EntityPackage.User user) {
         if (user == null) {
             throw new NullPointerException();
         }
 
-        userService.SaveUser(user);
+        userService.saveUser(user);
     }
 
     @GetMapping("/users")
@@ -25,7 +25,7 @@ public class UserController {
             throw new NullPointerException();
         }
 
-        return userService.GetUserByID(ID);
+        return userService.getUserById(ID);
     }
 
     @PutMapping("/users/{id}")
@@ -34,7 +34,7 @@ public class UserController {
             throw new NullPointerException();
         }
 
-        userService.UpdateUser(user);
+        userService.updateUser(user);
     }
 
     @DeleteMapping("/users/{id}")

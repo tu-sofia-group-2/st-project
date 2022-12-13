@@ -1,13 +1,12 @@
 package Service;
 
-import org.apache.catalina.User;
+
+import EntityPackage.User;
 
 public interface UserService {
-    void saveUser (User user);
-    User getUser (Long ID);
-    void updateUser (User user);
-
-    void updateUser(User user, Long userID);
-
+    void saveUser (EntityPackage.User user);
     void deleteUserById(Long userID);
+    EntityPackage.User getUserById(Long id);
+    void updateUserById(User user, Long userID);
+    User updateUser(User user);
 }
