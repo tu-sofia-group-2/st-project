@@ -9,7 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class UserProject {
-    private Long ID;
+    private Long id;
     private Project project;
     private User user;
 }

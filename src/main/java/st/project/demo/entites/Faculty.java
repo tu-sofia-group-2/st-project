@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 
 public class Faculty {
-    private Long ID;
+    private Long id;
     private String name;
     private String description;
     private List<Contact> contacts;

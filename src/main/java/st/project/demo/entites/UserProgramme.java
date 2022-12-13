@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 
 public class UserProgramme {
-    private Long ID;
+    private Long id;
     private User user;
     private Programme programme;
     private UserProgrammeStateEnum state;

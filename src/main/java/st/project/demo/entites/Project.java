@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Entity
 public class Project {
-	@Id
+
     private Long id;
     private Course course;
     private List<UserProject> users;

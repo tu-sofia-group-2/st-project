@@ -10,7 +10,7 @@ import java.util.Date;
 @AllArgsConstructor
 
 public class Message {
-    private Long ID;
+    private Long id;
     private User postedBy;
     private String body;
     private Date postedOn;

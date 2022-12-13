@@ -10,7 +10,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 public class Course {
-    private Long ID;
+    private Long id;
     private Long courseID;
     private String name;
     private String description;

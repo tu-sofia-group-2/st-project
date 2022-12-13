@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 
 public class Programme {
-    private Long ID;
+    private Long id;
     private String name;
     private String description;
     private int semester;

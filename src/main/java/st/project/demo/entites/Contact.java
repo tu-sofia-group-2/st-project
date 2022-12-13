@@ -10,7 +10,7 @@ import st.project.demo.constants.ContactTypeEnum;
 @AllArgsConstructor
 
 public class Contact {
-    private long ID;
+    private long id;
     private ContactTypeEnum type;
     private String body;
 }

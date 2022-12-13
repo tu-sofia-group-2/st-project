@@ -10,7 +10,7 @@ import st.project.demo.constants.CertificationEnum;
 @AllArgsConstructor
 
 public class CertificationUser {
-    private Long ID;
+    private Long id;
     private Course course;
     private User user;
     private CertificationEnum type;
