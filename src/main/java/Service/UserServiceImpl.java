@@ -1,7 +1,7 @@
 package Service;
 
-import Repository.UserRepository;
-import org.apache.catalina.User;
+import EntityPackage.User;
+import Repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,38 +9,37 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements  UserService{
 
     @Autowired
-    private UserRepository userRepository;
+    private UserDao userRepository;
 
     @Override
-    public void saveUser(User user) {
+    public void saveUser(EntityPackage.User user) {
         if (user == null) {
             throw new NullPointerException();
         }
 
-        userRepository.SaveUser(user);
+        userRepository.saveUser(user);
     }
 
     @Override
-    public User getUser(Long ID) {
-        if (ID == null) {
+    public EntityPackage.User getUserById(Long id) {
+        if (id == null) {
             throw new NullPointerException();
         }
 
-        return userRepository.GetUserByID(ID);
+        return userRepository.getUserByID(id);
     }
 
     @Override
-    public void updateUser(User user) {
-        //TODO
-    }
-
-    @Override
-    public void updateUser(User user, Long userID) {
+    public void updateUserById(User user, Long userID) {
         if (userID == null) {
             throw new NullPointerException();
         }
+        userRepository.updateUser(user);
+    }
 
-        userRepository.UpdateUser(user);
+    @Override
+    public User updateUser(User user) {
+        return userRepository.updateUser(user);
     }
 
     @Override
@@ -50,4 +49,6 @@ public class UserServiceImpl implements  UserService{
         }
         userRepository.deleteById(userID);
     }
+
+
 }
