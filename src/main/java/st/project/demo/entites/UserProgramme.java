@@ -9,8 +9,10 @@ import javax.persistence.*;
 @Getter
 @Setter
 @AllArgsConstructor
-
+@Entity
 public class UserProgramme {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private User user;
     private Programme programme;

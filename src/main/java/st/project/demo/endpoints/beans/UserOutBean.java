@@ -2,9 +2,8 @@ package st.project.demo.endpoints.beans;
 
 import java.util.List;
 
-import EntityPackage.Contact;
-import EntityPackage.Role;
 import lombok.Data;
+import st.project.demo.entites.Contact;
 
 @Data
 public class UserOutBean {
