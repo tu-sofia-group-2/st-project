@@ -1,6 +1,6 @@
-package Service;
+package st.project.demo.service.user;
 
-import org.apache.catalina.User;
+import st.project.demo.entites.User;
 
 public interface UserService {
     void saveUser (User user);
