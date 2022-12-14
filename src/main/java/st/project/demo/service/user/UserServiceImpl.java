@@ -1,15 +1,16 @@
-package Service;
+package st.project.demo.service.user;
 
-import Repository.UserRepository;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import st.project.demo.entites.User;
+import st.project.demo.repositories.UserDao;
 
 @Service
 public class UserServiceImpl implements  UserService{
 
     @Autowired
-    private UserRepository userRepository;
+    private UserDao userRepository;
 
     @Override
     public void saveUser(User user) {
@@ -17,16 +18,16 @@ public class UserServiceImpl implements  UserService{
             throw new NullPointerException();
         }
 
-        userRepository.SaveUser(user);
+        userRepository.saveAndFlush(user);
     }
 
     @Override
-    public User getUser(Long ID) {
-        if (ID == null) {
+    public User getUser(Long id) {
+        if (id == null) {
             throw new NullPointerException();
         }
 
-        return userRepository.GetUserByID(ID);
+        return userRepository.getById(id);
     }
 
     @Override
@@ -35,19 +36,20 @@ public class UserServiceImpl implements  UserService{
     }
 
     @Override
-    public void updateUser(User user, Long userID) {
-        if (userID == null) {
+    public void updateUser(User user, Long userId) {
+        if (userId == null) {
             throw new NullPointerException();
         }
 
-        userRepository.UpdateUser(user);
+        userRepository.saveAndFlush(user);
     }
 
     @Override
-    public void deleteUserById(Long userID) {
-        if (userID == null) {
+    public void deleteUserById(Long userId) {
+        if (userId == null) {
             throw new NullPointerException();
         }
-        userRepository.deleteById(userID);
+        
+        userRepository.deleteById(userId);
     }
 }
