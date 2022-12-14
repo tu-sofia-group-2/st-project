@@ -1,16 +1,16 @@
-package EntityPackage;
+package st.project.demo.entites;
 
-import EnumPackage.ContactTypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import st.project.demo.constants.ContactTypeEnum;
 
 @Getter
 @Setter
 @AllArgsConstructor
 
 public class Contact {
-    private long ID;
+    private long id;
     private ContactTypeEnum type;
     private String body;
 }

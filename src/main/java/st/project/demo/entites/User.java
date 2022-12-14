@@ -1,4 +1,4 @@
-package EntityPackage;
+package st.project.demo.entites;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 public class User {
-    private Long ID;
+    private Long id;
     private String firstName;
     private String middleName;
     private String lastName;

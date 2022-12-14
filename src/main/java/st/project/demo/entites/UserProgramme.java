@@ -1,9 +1,9 @@
-package EntityPackage;
+package st.project.demo.entites;
 
-import EnumPackage.UserProgrammeStateEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import st.project.demo.constants.UserProgrammeStateEnum;
 
 import javax.persistence.*;
 @Getter
@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 
 public class UserProgramme {
-    private Long ID;
+    private Long id;
     private User user;
     private Programme programme;
     private UserProgrammeStateEnum state;

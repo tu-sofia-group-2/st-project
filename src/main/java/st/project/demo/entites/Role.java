@@ -1,4 +1,4 @@
-package EntityPackage;
+package st.project.demo.entites;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 
 public class Role {
-    private Long ID;
+    private Long id;
     private String name;
     private List<String> permissions;
 }

@@ -1,9 +1,9 @@
-package EntityPackage;
+package st.project.demo.entites;
 
-import EnumPackage.DegreeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import st.project.demo.constants.DegreeEnum;
 
 import java.util.List;
 @Getter
@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 
 public class Programme {
-    private Long ID;
+    private Long id;
     private String name;
     private String description;
     private int semester;
