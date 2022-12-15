@@ -5,4 +5,7 @@ import st.project.demo.entites.Course;
 
 public interface CourseDao extends JpaRepository<Course, Long> {
     public Course getById(Long id);
+    
+    public Course getByCourseId(Long courseId);
+    
 }
