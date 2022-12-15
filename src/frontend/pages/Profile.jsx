@@ -6,12 +6,21 @@ import UserCard from '../components/user/UserCard'
 const dummyUser = {
     name: "John Constantine",
     email: "john@testmail.com",
-    img: "https://images.alphacoders.com/566/thumb-1920-566243.jpg",
+    img: "../assets/john.png",
     userId: "121220169",
     faculty: "KST",
     program: "KSI",
-    formOfEducation: 'redovno',
-    OKS: "bakalavar",
+    formOfEducation: 'in person',
+    OKS: "Bachelors",
+    priem:"DP",
+    status:"active",
+    semester:"4",
+    certifiedSem:"3",
+    group:"77",
+    subgroup:"16",
+    mainPr:"yes",
+    tusmail:"jconstantine@tu-sofia.bg"
+
 }
 
 export default function Profile() {
