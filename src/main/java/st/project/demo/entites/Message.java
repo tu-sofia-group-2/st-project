@@ -6,10 +6,8 @@ import lombok.Setter;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,6 +16,9 @@ public class Message {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+    @ManyToOne
+    private Course course;
+    @ManyToOne
     private User postedBy;
     private String body;
     private Date postedOn;

@@ -1,14 +1,11 @@
 package st.project.demo.entites;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.lang.Nullable;
 import st.project.demo.constants.ContactTypeEnum;
 
 @Getter
@@ -23,4 +20,6 @@ public class Contact {
     private String body;
     @ManyToOne
     private User user;
+    @ManyToOne
+    private Faculty faculty;
 }

@@ -7,12 +7,8 @@ import st.project.demo.constants.DegreeEnum;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -24,12 +20,12 @@ public class Programme {
     private String name;
     private String description;
     private int semester;
+    @ManyToOne
     private Faculty faculty;
     private DegreeEnum degree;
     private int duration;
-    private Programme extensionOf;
     @OneToMany(mappedBy="programme", cascade=CascadeType.ALL)
     private List<UserProgramme> userProgrammes;
-    @OneToMany(mappedBy="course", cascade=CascadeType.ALL)
+    @OneToMany(mappedBy="programme", cascade=CascadeType.ALL)
     private List<Course> courses;
 }

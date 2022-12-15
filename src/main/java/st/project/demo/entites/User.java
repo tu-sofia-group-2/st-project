@@ -19,12 +19,15 @@ public class User {
     private String lastName;
     private Long facultyID;
     private Boolean gender;
+    @OneToMany
+    private List<Message> messages;
     @OneToMany(mappedBy="user", cascade=CascadeType.ALL)
     private List<UserProgramme> programmes;
     @OneToMany(mappedBy="user", cascade=CascadeType.ALL)
     private List<Contact> contacts;
-    @OneToMany
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<UserProject> projects;
     @ManyToOne
-    private Role role;
+    private UserRole role;
+
 }

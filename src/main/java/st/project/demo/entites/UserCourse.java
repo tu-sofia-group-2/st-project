@@ -7,12 +7,8 @@ import st.project.demo.constants.CourseRoleEnum;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -20,7 +16,10 @@ import javax.persistence.OneToMany;
 public class UserCourse {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
+    @ManyToOne
     private User user;
+    @ManyToOne
     private Course course;
     private CourseRoleEnum courseRoleEnum;
     private int year;
