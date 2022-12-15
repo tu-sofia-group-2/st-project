@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,7 +22,7 @@ public class Course {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private Long courseID;
+    private Long courseId;
     private String name;
     private String description;
     private Programme programme;
@@ -30,5 +31,6 @@ public class Course {
     private List<UserCourse> users;
     private List<Message> messages;
     private List<CertificationEnum> formOfControl;
+    @OneToOne(mappedBy="project")
     private Project project;
 }

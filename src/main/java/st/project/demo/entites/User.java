@@ -23,5 +23,8 @@ public class User {
     private List<UserProgramme> programmes;
     @OneToMany(mappedBy="user", cascade=CascadeType.ALL)
     private List<Contact> contacts;
+    @OneToMany
+    private List<UserProject> projects;
+    @ManyToOne
     private Role role;
 }

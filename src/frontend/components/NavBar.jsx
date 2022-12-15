@@ -1,14 +1,17 @@
 import { StyleSheet, Text, View,TouchableOpacity,Dimensions } from 'react-native'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import FontAwesome from '@expo/vector-icons/Ionicons'
-import {navigate} from '../navigation/navRef'
+import { useNavigation } from '@react-navigation/native';
+
 const windowWidth = Dimensions.get('window').width;
 
 export default function NavBar() {
 
+    const navigation = useNavigation();
+
     return (
         <View style={styles.nav}>
-            <TouchableOpacity style={styles.btn} onPress={navigate("Profile",{user:{name: "kati", age: 22}})}>
+            <TouchableOpacity style={styles.btn} onPress={navigation.navigate("Profile",{user:{name: "kati", age: 22}})}>
                 <FontAwesome name="home" size={28} color="white" />
                 <Text>My profile</Text>
             </TouchableOpacity>
