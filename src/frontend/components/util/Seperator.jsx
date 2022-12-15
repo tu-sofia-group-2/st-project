@@ -51,7 +51,8 @@ const styles = StyleSheet.create ({
     },
     textWrapper : {
         flexShrink: 0,
-        paddingRight: "3%"
+        paddingHorizontal: "3%"
+        
     }
 })
 

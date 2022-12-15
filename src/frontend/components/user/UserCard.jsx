@@ -5,7 +5,7 @@ const { width, height } = Dimensions.get('window')
 
 export default function UserCard({user}) {
     return (
-        <View >
+        <View>
             <View style={styles.header}>
                 <Image
                     style={styles.profilePicture}
@@ -14,7 +14,7 @@ export default function UserCard({user}) {
                 />
             </View>
             <ScrollView
-                style={{height: height * 0.7 + 62}}
+                style={{height: height * 0.65}}
             >
                 <View style={styles.data}>
                     <Text>Име : </Text>
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
 
     },
     dataList:{
-        marginBottom:50,
+        //marginBottom:10,
         backgroundColor:"red"
     }
 })

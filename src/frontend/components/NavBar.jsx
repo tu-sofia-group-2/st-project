@@ -2,18 +2,20 @@ import { StyleSheet, Text, View,TouchableOpacity,Dimensions } from 'react-native
 import Ionicons from '@expo/vector-icons/Ionicons'
 import FontAwesome from '@expo/vector-icons/Ionicons'
 import {navigate} from'./util/NavRef'
+import { useNavigation } from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 
 export default function NavBar() {
+    const navg = useNavigation();
 
     return (
         <View style={styles.nav}>
-            <TouchableOpacity style={styles.btn} onPress={navigate("Profile",{user:{name: "kati", age: 22}})}>
+            <TouchableOpacity style={styles.btn} onPress={navg.navigate("Profile",{user:{name: "kati", age: 22}})}>
                 <FontAwesome name="home" size={28} color="white" />
                 <Text>My profile</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btn}onPress={navigate("SubjectsPageWrapper",{userId:125})}>
+            <TouchableOpacity style={styles.btn} onPress={navg.navigate("SubjectsPageWrapper",{userId:125})}>
                 <FontAwesome name="book" size={28} color="white" />
                 <Text>My cources</Text>
             </TouchableOpacity>

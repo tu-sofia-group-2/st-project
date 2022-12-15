@@ -1,14 +1,11 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
+import FormattedText from "../util/FormattedText";
 
 const ScrollDetailsFormElement = ({value, label}) => {
     return <View style={styles.container}>
-        <Text>
-            {label} 
-        </Text>
-        <Text>
-            {value}
-        </Text>
+        <FormattedText text={label}/>
+        <FormattedText text={value}/>
     </View>
 }
 
