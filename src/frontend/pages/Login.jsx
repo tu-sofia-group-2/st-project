@@ -10,7 +10,7 @@ export default function Login() {
    
     return (
         <View style={styles.container}>
-            <Image style={styles.image} source={require("../../assets/logo.png")} />
+            <Image style={styles.image} source={require("../assets/logo.png")} />
     
             <View style={styles.inputView}>
             <TextInput

@@ -5,16 +5,16 @@ const { width, height } = Dimensions.get('window')
 
 export default function UserCard({user}) {
     return (
-        <View >
+        <View>
             <View style={styles.header}>
                 <Image
                     style={styles.profilePicture}
-                    source={require('../../assets/ty.jpg')}
+                    source={require('../../assets/john.png')}
                     resizeMode="contain"
                 />
             </View>
             <ScrollView
-                style={{height: height * 0.7 + 62}}
+                style={{height: height * 0.65}}
             >
                 <View style={styles.data}>
                     <Text>Име : </Text>
@@ -22,59 +22,59 @@ export default function UserCard({user}) {
                 </View>
                 <View style={styles.data}>
                     <Text>Факултетен номер : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.userId}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Факултет : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.faculty}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Специалност : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.program}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Вид обучение : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.formOfEducation}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Прием : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.priem}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>ОКС : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.OKS}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Имейл : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.email}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Състояние : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.status}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Записан семестър : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.semester}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Заверен семестър : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.certifiedSem}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Поток : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.subgroup}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Група : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.group}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Основна специалност : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.mainPr}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Имейл в ТУ : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{user.tusmail}</Text>
                 </View>
             </ScrollView>
         </View>
@@ -90,10 +90,8 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        // paddingTop: StatusBar.currentHeight,
       },
       scrollView: {
-        backgroundColor: 'pink',
         marginHorizontal: 20,
       },
       text: {
@@ -113,13 +111,9 @@ const styles = StyleSheet.create({
     }, 
     data:{
         width:"100%",
-        height:80,
+        height:70,
         borderBottomColor:"#a8cfe8",
         borderBottomWidth:3
 
     },
-    dataList:{
-        marginBottom:50,
-        backgroundColor:"red"
-    }
 })

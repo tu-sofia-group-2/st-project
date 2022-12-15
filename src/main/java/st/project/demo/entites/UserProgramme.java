@@ -15,10 +15,12 @@ public class UserProgramme {
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private User user;
+    @ManyToOne
     private Programme programme;
     private UserProgrammeStateEnum state;
     private int semester;
     private Boolean minor;
+    @OneToOne
     private YearSemesterTouple startedOn;
     private int startedFrom;
 }

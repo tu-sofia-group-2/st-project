@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,6 +20,8 @@ public class Project {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+	@OneToOne
     private Course course;
+	@OneToMany(mappedBy="project")
     private List<UserProject> users;
 }

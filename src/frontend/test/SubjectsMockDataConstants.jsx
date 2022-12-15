@@ -70,3 +70,8 @@ export const SUBJECT_LIST_RENDERER_MOCK = [
         subjects: SUBJECTS_LIST_MOCK
     },
 ];
+
+export const SUBJECT_LIST_TEACHER_STUDENT = {
+    teacher : SUBJECT_LIST_RENDERER_MOCK,
+    student : SUBJECT_LIST_RENDERER_MOCK
+}
