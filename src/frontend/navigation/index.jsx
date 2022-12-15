@@ -26,7 +26,7 @@ const Stack = createNativeStackNavigator()
                 </Stack.Navigator>
             </NavigationContainer>
         </View>
-            <NavBar/>
+            {/* <NavBar/> */}
         </>
     )
 }
