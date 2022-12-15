@@ -7,13 +7,8 @@ import st.project.demo.constants.CertificationEnum;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -25,12 +20,15 @@ public class Course {
     private Long courseId;
     private String name;
     private String description;
+    @ManyToOne
     private Programme programme;
     private int semester;
     @OneToMany(mappedBy="course", cascade=CascadeType.ALL)
     private List<UserCourse> users;
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<Message> messages;
+    @ElementCollection
     private List<CertificationEnum> formOfControl;
-    @OneToOne(mappedBy="project")
-    private Project project;
+    @OneToMany(mappedBy="course")
+    private List<Project> project;
 }

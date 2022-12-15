@@ -14,14 +14,13 @@ public class UserProgramme {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+    @ManyToOne
     private User user;
     @ManyToOne
     private Programme programme;
     private UserProgrammeStateEnum state;
-    private int semester;
     private Boolean minor;
-    @OneToOne
     private YearSemesterTouple startedOn;
-    private int startedFrom;
+    private Integer startedFrom;
 }
 

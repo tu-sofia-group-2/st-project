@@ -4,21 +4,19 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.*;
 import java.util.List;
 
-import javax.persistence.*;
-
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
-@Entity
-public class Role {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-    private String name;
-    @ElementCollection
-    private List<String> permissions;
+public class UserRole {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     @OneToMany(mappedBy = "role")
     private List<User> users;
+    @ManyToOne
+    private Role role;
 }
