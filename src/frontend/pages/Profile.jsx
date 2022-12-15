@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 import UserCard from '../components/user/UserCard'
+import FormattedText from '../components/util/FormattedText'
 
 const dummyUser = {
     name: "John Constantine",
@@ -31,4 +32,6 @@ export default function Profile() {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+
+})
