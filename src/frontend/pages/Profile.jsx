@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-import UserCard from '../components/UserCard'
+import UserCard from '../components/user/UserCard'
 
 const dummyUser = {
     name: "John Constantine",
