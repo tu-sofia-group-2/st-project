@@ -9,6 +9,8 @@ const windowWidth = Dimensions.get('window').width;
 export default function NavBar() {
     const navg = useNavigation();
 
+    const navigation = useNavigation();
+
     return (
         <View style={styles.nav}>
             <TouchableOpacity style={styles.btn} onPress={navg.navigate("Profile",{user:{name: "kati", age: 22}})}>
