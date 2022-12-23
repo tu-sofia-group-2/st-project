@@ -4,11 +4,13 @@ import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import st.project.demo.constants.CertificationEnum;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class CertificationUser {
@@ -20,7 +22,7 @@ public class CertificationUser {
     private Course course;
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user;
+    private Person user;
     private CertificationEnum type;
     private boolean taken;
 }

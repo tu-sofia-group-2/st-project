@@ -2,6 +2,7 @@ package st.project.demo.entites;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class Role {
@@ -20,5 +22,5 @@ public class Role {
     @ElementCollection
     private List<String> permissions;
     @OneToMany(mappedBy = "role")
-    private List<User> users;
+    private List<Person> users;
 }

@@ -4,12 +4,14 @@ import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.lang.Nullable;
 import st.project.demo.constants.ContactTypeEnum;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class Contact {
@@ -19,7 +21,7 @@ public class Contact {
     private ContactTypeEnum type;
     private String body;
     @ManyToOne
-    private User user;
+    private Person user;
     @ManyToOne
     private Faculty faculty;
 }

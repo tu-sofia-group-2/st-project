@@ -4,12 +4,14 @@ import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class UserProject {
@@ -19,5 +21,5 @@ public class UserProject {
     @ManyToOne
     private Project project;
     @ManyToOne
-    private User user;
+    private Person user;
 }

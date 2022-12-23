@@ -16,7 +16,7 @@ const UserPageWrapper = (...props) => {
     useEffect(()=>{
         
         getUserByUserId(props[0].route.params.userId)
-        //.then(result=>normalizeResult(result))
+        .then(result=>normalizeResult(result))
         .then(normalized=>{
             console.log(normalized);
             setUser(normalized)})

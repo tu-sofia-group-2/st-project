@@ -17,10 +17,10 @@ const SubjectsPageWrapper = ({userId}) => {
     }
 
     useEffect(()=>{
-        // getSubjectsByUser(userId)
-        // .then(result=>normalizeData(result))
-        // .then(normalized=>setSubjects(normalized))
-        // .finally(setLoading(false));
+        getSubjectsByUser(userId)
+        .then(result=>normalizeData(result))
+        .then(normalized=>setSubjects(normalized))
+        .finally(setLoading(false));
     },[userId])
 
     return (loading ? "Loading" : <SubjectsPage data = {subjects}/>)
