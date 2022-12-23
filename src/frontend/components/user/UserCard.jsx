@@ -4,8 +4,8 @@ import React from 'react'
 const { width, height } = Dimensions.get('window')
 
 export default function UserCard({user}) {
-    return (
-        <View>
+    return (!user ? null : 
+        <View >
             <View style={styles.header}>
                 <Image
                     style={styles.profilePicture}
@@ -18,11 +18,11 @@ export default function UserCard({user}) {
             >
                 <View style={styles.data}>
                     <Text>Име : </Text>
-                    <Text>{user.name}</Text>
+                    <Text>{`${user.firstName} ${user.middleName} ${user.lastName}`}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Факултетен номер : </Text>
-                    <Text>{user.userId}</Text>
+                    <Text>{user.facultyId}</Text>
                 </View>
                 <View style={styles.data}>
                     <Text>Факултет : </Text>

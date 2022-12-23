@@ -1,35 +1,30 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Text } from "react-native";
 import UserCard from "../components/user/UserCard";
 import { getUserByUserId } from "../components/util/Fetch";
 
-const UserPageWrapper = ({userId}) => {
-    const [loading, isLoading] = useState(false);
-    const [user, setUser] = useState({});
+const UserPageWrapper = (...props) => {
+    const [loading, isLoading] = useState(true);
+    const [user, setUser] = useState();
 
     const normalizeResult = (data) => {
         return data;
     }
     
     useEffect(()=>{
-        // getUserByUserId(userId)
-        // .then(result=>normalizeResult(result))
-        // .then(normalized=>setUser(normalized))
-        // .finally(isLoading(false))
-        setUser({
-            name: "John Constantine",
-            email: "john@testmail.com",
-            img: "https://images.alphacoders.com/566/thumb-1920-566243.jpg",
-            userId: "121220169",
-            faculty: "KST",
-            program: "KSI",
-            formOfEducation: 'redovno',
-            OKS: "bakalavar",
-        })
-    },[userId])
+        
+        getUserByUserId(props[0].route.params.userId)
+        //.then(result=>normalizeResult(result))
+        .then(normalized=>{
+            console.log(normalized);
+            setUser(normalized)})
+        .finally(isLoading(false))
+        
+    },[props[0].route.params.userId])
 
-    return(loading ? "loading" : <UserCard user={user}/>)
+    return((loading && !user) ? <Text>"loading"</Text> : <UserCard user={user}/>)
 }
 
 export default UserPageWrapper;
