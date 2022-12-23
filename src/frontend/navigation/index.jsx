@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { StyleSheet, Text, View,Image,TextInput,Button, Pressable } from 'react-native';
 //import { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
@@ -8,13 +9,31 @@ import Profile from '../pages/Profile';
 import UserPageWrapper from '../pages/UserPageWrapper';
 import SubjectsPageWrapper from '../pages/SubjectsPageWrapper';
 import FontAwesome from '@expo/vector-icons/Ionicons'
+import { getLogin } from "../components/util/Fetch";
 
 //import { navigationRef } from '../components/util/NavRef';
 const PROFILE = "Profile";
 const SUBJECTS = "Subjects";
 
 const Tab = createBottomTabNavigator()
+
+
+
  const Navigation=()=> {
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [uid, setUid] = useState();
+
+    const onSubmit = (user) => {
+        getLogin(user).then((response)=>{
+            if(response.status != 403) {
+                setIsLoggedIn(true);
+                return response.json();
+            } else {
+                throw new Error(`invalid login`);
+            }
+        })
+    }
+
     return (
         <>
         <View style={styles.container}>
@@ -29,10 +48,17 @@ const Tab = createBottomTabNavigator()
                         }
                     }
                 })}>
-                    {/* <Tab.Screen name={PROFILE} component={Profile} options={{headerShown: false}} /> */}
-                    {/* <Tab.Screen name="Login" component={Login} options={{headerShown: false}} /> */}
-                    <Tab.Screen name={PROFILE} component={UserPageWrapper} options={{headerShown: false}} />
+                    {isLoggedIn ? (
+                    <>
+                    <Tab.Screen name={PROFILE} component={UserPageWrapper} initialParams={{userId: 0}} options={{headerShown: false, params: {
+                        userId:0
+                    }}} />
                     <Tab.Screen name={SUBJECTS} component={SubjectsPageWrapper} options={{headerShown: false}} />
+                    </>)
+                    :<Tab.Screen name="Login" component={Login}
+                    initialParams={{onSubmit : onSubmit}}
+                    options={{headerShown: false}} />
+                }
                 </Tab.Navigator>
             </NavigationContainer>
         </View>

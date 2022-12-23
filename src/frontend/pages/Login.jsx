@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, Button} fro
 import {useState} from "react"
 import React from 'react'
 
-export default function Login() {
+export default function Login(...props) {
     const [user, setUser] = useState({
         email: "",
         password: ""
@@ -45,7 +45,7 @@ export default function Login() {
                 <Text style={styles.forgotBtn}>Forgot your Password?</Text>
             </TouchableOpacity>
     
-            <TouchableOpacity style={styles.loginBtn}>
+            <TouchableOpacity style={styles.loginBtn} onPress={props[0].route.params.onSubmit(user)}>
                 <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>
         </View>
