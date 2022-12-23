@@ -1,11 +1,11 @@
 package st.project.demo.services;
 
-import st.project.demo.entites.User;
+import st.project.demo.entites.Person;
 
 public interface UserService {
 
-    User getUserById(Long id);
+    Person getUserById(Long id);
 
-    User loginUsername(String username);
+    Person loginUsername(String username, String password);
 }
 
