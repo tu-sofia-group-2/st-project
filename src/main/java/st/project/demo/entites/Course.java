@@ -33,4 +33,6 @@ public class Course {
     private List<CertificationEnum> formOfControl;
     @OneToMany(mappedBy="course")
     private List<Project> project;
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    private List<CourseFeedback> courseFeedback;
 }

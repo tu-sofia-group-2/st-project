@@ -33,5 +33,7 @@ public class Person {
     private List<UserProject> projects;
     @ManyToOne
     private Role role;
+    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+    private  List<CourseFeedback> courseFeedbacks;
 
 }
