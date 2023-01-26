@@ -10,4 +10,9 @@ public class RoleServiceImpl implements RoleService{
     @Autowired
     private RoleDao roleDao;
     public Role getRoleById(Long id){return roleDao.getById(id);}
+    public Role getRoleByName(String name) {return roleDao.getByName(name);}
+    public void addRole(String name) {
+        Role role = new Role(name);
+        roleDao.save(role);
+    }
 }

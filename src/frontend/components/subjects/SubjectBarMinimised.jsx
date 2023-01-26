@@ -17,7 +17,7 @@ const SubjectBarMinimised = ({ name, labs, project, courseWork, seminars, lectur
         onPress(el)
     }
 
-    return (<TouchableOpacity onPress={()=>action()}>
+    return (<TouchableOpacity onPress={() => action()}>
         <View style={styles.wrapperComponent}>
             <View style={styles.leftTextContainer}>
                 <Text style={styles.leftText}>

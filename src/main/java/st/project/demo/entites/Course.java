@@ -1,5 +1,6 @@
 package st.project.demo.entites;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,16 +24,21 @@ public class Course {
     private String name;
     private String description;
     @ManyToOne
+    @JsonIgnore
     private Programme programme;
     private int semester;
     @OneToMany(mappedBy="course", cascade=CascadeType.ALL)
+    @JsonIgnore
     private List<UserCourse> users;
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Message> messages;
     @ElementCollection
     private List<CertificationEnum> formOfControl;
     @OneToMany(mappedBy="course")
+    @JsonIgnore
     private List<Project> project;
+    @JsonIgnore
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<CourseFeedback> courseFeedback;
 }

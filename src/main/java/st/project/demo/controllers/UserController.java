@@ -7,19 +7,21 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import st.project.demo.beans.PersonBean;
+import st.project.demo.entites.Course;
 import st.project.demo.entites.Person;
+import st.project.demo.entites.Role;
 import st.project.demo.mappers.PersonFactory;
+import st.project.demo.pojos.requests.AddUserRequest;
+import st.project.demo.services.RoleServiceImpl;
 import st.project.demo.services.UserServiceImpl;
 
+import java.util.List;
+
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/user")
 public class UserController {
 	@Autowired
@@ -27,6 +29,9 @@ public class UserController {
 
 	@Autowired
 	private PersonFactory personFactory;
+
+	@Autowired
+	private RoleServiceImpl roleService;
 	
 	@CrossOrigin
 	@GetMapping("/{id}")
@@ -43,4 +48,26 @@ public class UserController {
 		}
 	}
 
+	@PostMapping("/addUser")
+	public ResponseEntity<?> addUser(@RequestBody AddUserRequest addUserRequest) {
+		try
+		{
+			Role role = roleService.getRoleByName(addUserRequest.getRoleName());
+			Person person = new Person(addUserRequest, role);
+			userService.addPerson(person);
+			return ResponseEntity.ok("Person added successfully!");
+		}catch (Exception e){
+			return ResponseEntity.badRequest().body("Something went wrong! " + e.getMessage());
+		}
+	}
+
+	@GetMapping("/getCoursesByUserId")
+	public ResponseEntity<?> getCoursesByUserId(@RequestParam Long userId){
+		try {
+			List<Course> courses = userService.getSubjectsByUserId(userId);
+			return ResponseEntity.ok().body(courses);
+		}catch (Exception e){
+			return ResponseEntity.badRequest().body("Something went wrong! " + e.getMessage());
+		}
+	}
 }

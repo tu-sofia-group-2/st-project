@@ -23,4 +23,8 @@ public class Role {
     private List<String> permissions;
     @OneToMany(mappedBy = "role")
     private List<Person> users;
+
+    public Role(String name){
+        this.name = name;
+    }
 }

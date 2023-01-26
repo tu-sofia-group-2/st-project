@@ -7,4 +7,5 @@ import st.project.demo.entites.Role;
 
 public interface RoleDao extends JpaRepository<Role, Long> {
     public Role getById(Long id);
+    public Role getByName(String name);
 }

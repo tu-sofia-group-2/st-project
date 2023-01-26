@@ -2,7 +2,7 @@ import React from "react";
 import { FlatList, View, ActivityIndicator } from "react-native";
 import SubjectBarMinimised from "./SubjectBarMinimised";
 
-const SubjectsList = ({ data , onPress , index, type }) => {
+const SubjectsList = ({ data, onPress, index, type }) => {
 
     const renderItem = ({ item }) => {
         return <SubjectBarMinimised
@@ -12,10 +12,12 @@ const SubjectsList = ({ data , onPress , index, type }) => {
             seminars={item.seminars}
             project={item.project}
             courseWork={item.courseWork}
-            onPress = {onPress}
-            index = {index}
-            type = {type}
-            subIndex = {item.id}
+            onPress={onPress}
+            index={index}
+            type={type}
+            subIndex={item.id}
+            keyExtractor={item.id}
+            key={item.id}
         />
     }
 

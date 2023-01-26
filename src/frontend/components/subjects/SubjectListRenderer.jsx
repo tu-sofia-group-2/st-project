@@ -6,14 +6,16 @@ import SubjectsList from "./SubjectsList";
 
 const SubjectListRenderer = ({ data, type, onPress }) => {
 
-    const renderItem = ({item}) => {
+    const renderItem = ({ item }) => {
         return <View>
             <Seperator text={item.header} type={LEFT} color="gray" />
             <SubjectsList data={item.subjects} index={item.id} type={type} onPress={onPress} />
         </View>
     }
 
+    //  tuk data idva za malko pravilna i posle stava prazno?
     return (<View style={{ width: "100%" }}>
+        {console.log("tuk sum sled student", data)}
         {!data ?
             <ActivityIndicator size="large" /> :
             <FlatList
@@ -22,6 +24,7 @@ const SubjectListRenderer = ({ data, type, onPress }) => {
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}
+                key={item => item.id}
             />
         }
     </View>)

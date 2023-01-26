@@ -15,7 +15,7 @@ const SubjectsPage = ({ data }) => {
     const [selected, setSelected] = useState(MOCK_DATA_UNEDITABLE);
     const [hidden, isHidden] = useState(false);
 
-    const normalize=(result)=>{
+    const normalize = (result) => {
         return result;
     }
 
@@ -30,13 +30,14 @@ const SubjectsPage = ({ data }) => {
     }
 
     return !data ? <ActivityIndicator size="large" /> :
-        <ScrollView 
+        <ScrollView
             style={styles.v}
-            alwaysBounceVertical 
-            showsHorizontalScrollIndicator={false} 
+            alwaysBounceVertical
+            showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}>
             {data.student === undefined || data.student === null ? null :
                 <View>
+                    {console.log("data student - ", data.student)}
                     <Seperator text="Student" type={CENTER} color="gray" />
                     <SubjectListRenderer data={data.student} type={TYPE_STUDENT} onPress={onPress} />
                 </View>
@@ -57,8 +58,8 @@ const SubjectsPage = ({ data }) => {
 
 const styles = StyleSheet.create({
     v: {
-        marginTop:"10%",
-        marginHorizontal:"3%"
+        marginTop: "10%",
+        marginHorizontal: "3%"
     }
 })
 

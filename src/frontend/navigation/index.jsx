@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { StyleSheet, Text, View,Image,TextInput,Button, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, Button, Pressable } from 'react-native';
 //import { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Login from '../pages/Login' 
+import Login from '../pages/Login'
 //import NavBar from '../components/NavBar';
 import Profile from '../pages/Profile';
 import UserPageWrapper from '../pages/UserPageWrapper';
@@ -19,13 +19,13 @@ const Tab = createBottomTabNavigator()
 
 
 
- const Navigation=()=> {
+const Navigation = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     const [uid, setUid] = useState();
 
     const onSubmit = (user) => {
-        getLogin(user).then((response)=>{
-            if(response.status != 403) {
+        getLogin(user).then((response) => {
+            if (response.status != 403) {
                 setIsLoggedIn(true);
                 return response.json();
             } else {
@@ -36,39 +36,45 @@ const Tab = createBottomTabNavigator()
 
     return (
         <>
-        <View style={styles.container}>
-            <NavigationContainer  >
-                <Tab.Navigator
-                screenOptions={({route})=>({
-                    tabBarIcon : ()=>{
-                        if(route.name == PROFILE) {
-                            return <FontAwesome name="home" size={28} color="#a8cfe8" />
-                        } else if (route.name == SUBJECTS) {
-                            return <FontAwesome name="book" size={28} color="#a8cfe8" />
+            <View style={styles.container}>
+                <NavigationContainer  >
+                    <Tab.Navigator
+                        screenOptions={({ route }) => ({
+                            tabBarIcon: () => {
+                                if (route.name == PROFILE) {
+                                    return <FontAwesome name="home" size={28} color="#a8cfe8" />
+                                } else if (route.name == SUBJECTS) {
+                                    return <FontAwesome name="book" size={28} color="#a8cfe8" />
+                                }
+                            }
+                        })}>
+                        {isLoggedIn ? (
+                            <>
+                                <Tab.Screen name={PROFILE} component={UserPageWrapper} initialParams={{ userId: 1 /* TODO - ъм тука трябва по някъв начин да не е така :)*/ }} options={{
+                                    headerShown: false, params: {
+                                        userId: 1
+                                    }
+                                }} />
+                                <Tab.Screen name={SUBJECTS} component={SubjectsPageWrapper} initialParams={{ userId: 1 /* TODO - ъм тука трябва по някъв начин да не е така :)*/ }} options={{
+                                    headerShown: false, params: {
+                                        userId: 1
+                                    }
+                                }} />
+                            </>)
+                            : <Tab.Screen name="Login" component={Login}
+                                initialParams={{ onSubmit: onSubmit }}
+                                options={{ headerShown: false }} />
                         }
-                    }
-                })}>
-                    {isLoggedIn ? (
-                    <>
-                    <Tab.Screen name={PROFILE} component={UserPageWrapper} initialParams={{userId: 0}} options={{headerShown: false, params: {
-                        userId:0
-                    }}} />
-                    <Tab.Screen name={SUBJECTS} component={SubjectsPageWrapper} options={{headerShown: false}} />
-                    </>)
-                    :<Tab.Screen name="Login" component={Login}
-                    initialParams={{onSubmit : onSubmit}}
-                    options={{headerShown: false}} />
-                }
-                </Tab.Navigator>
-            </NavigationContainer>
-        </View>
-         
+                    </Tab.Navigator>
+                </NavigationContainer>
+            </View>
+
         </>
     )
 }
- const styles = StyleSheet.create({
-    container:{
-        flex:1
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
     }
- })
- export default Navigation;
+})
+export default Navigation;

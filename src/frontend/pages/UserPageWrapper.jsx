@@ -12,19 +12,16 @@ const UserPageWrapper = (...props) => {
     const normalizeResult = (data) => {
         return data;
     }
-    
-    useEffect(()=>{
-        
-        getUserByUserId(props[0].route.params.userId)
-        .then(result=>normalizeResult(result))
-        .then(normalized=>{
-            console.log(normalized);
-            setUser(normalized)})
-        .finally(isLoading(false))
-        
-    },[props[0].route.params.userId])
 
-    return((loading && !user) ? <Text>"loading"</Text> : <UserCard user={user}/>)
+    useEffect(() => {
+        getUserByUserId(props[0].route.params.userId)
+            .then(result => normalizeResult(result))
+            .then(normalized => setUser(normalized))
+            .finally(isLoading(false))
+
+    }, [props[0].route.params.userId])
+
+    return ((loading && !user) ? <Text>"loading"</Text> : <UserCard user={user} />)
 }
 
 export default UserPageWrapper;
