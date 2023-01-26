@@ -13,9 +13,7 @@ const SubjectListRenderer = ({ data, type, onPress }) => {
         </View>
     }
 
-    //  tuk data idva za malko pravilna i posle stava prazno?
     return (<View style={{ width: "100%" }}>
-        {console.log("tuk sum sled student", data)}
         {!data ?
             <ActivityIndicator size="large" /> :
             <FlatList

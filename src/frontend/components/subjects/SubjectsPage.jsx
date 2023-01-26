@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, Text, StyleSheet, View } from "react-native";
+import { ScrollView, Text, StyleSheet, View, TextInput } from "react-native";
 import { CENTER } from "../../constants/SeperatorTypesEnum";
 import { MOCK_DATA_UNEDITABLE } from "../../test/FormMockDataConstants";
 import Form from "../form/Form";
@@ -7,6 +7,7 @@ import { getSubjectBySubjectId } from "../util/Fetch";
 import PopupCombined from "../util/PopupCombined";
 import Seperator from "../util/Seperator";
 import SubjectListRenderer from "./SubjectListRenderer";
+import { useEffect } from "react";
 
 export const TYPE_TEACHER = "teacher";
 export const TYPE_STUDENT = "student";
@@ -37,7 +38,6 @@ const SubjectsPage = ({ data }) => {
             showsVerticalScrollIndicator={false}>
             {data.student === undefined || data.student === null ? null :
                 <View>
-                    {console.log("data student - ", data.student)}
                     <Seperator text="Student" type={CENTER} color="gray" />
                     <SubjectListRenderer data={data.student} type={TYPE_STUDENT} onPress={onPress} />
                 </View>
@@ -51,6 +51,7 @@ const SubjectsPage = ({ data }) => {
             <PopupCombined isModalOpen={hidden} setIsModalOpen={isHidden}>
                 <Form
                     data={selected}
+                    feedback={true}
                 />
             </PopupCombined>
         </ScrollView>;

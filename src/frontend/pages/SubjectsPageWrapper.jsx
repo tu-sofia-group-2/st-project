@@ -10,19 +10,18 @@ const SubjectsPageWrapper = (...props) => {
     const [subjects, setSubjects] = useState({
         teacher: SUBJECT_LIST_RENDERER_MOCK,
         student: SUBJECT_LIST_RENDERER_MOCK
-    });
+    }, []);
 
     const normalizeData = (data) => {
         return data;
     }
 
-    useEffect(() => {
-        getSubjectsByUser(props[0].route.params.userId)
-            .then(result => normalizeData(result))
-            .then(normalized => setSubjects({ teacher: [], student: normalized }))
-            .finally(setLoading(false));
-
-    }, [props[0].route.params.userId])
+    // useEffect(() => {
+    //     getSubjectsByUser(props[0].route.params.userId)
+    //         .then(result => normalizeData(result))
+    //         .then(normalized => setSubjects({ teacher: [], student: normalized }))
+    //         .finally(setLoading(false));
+    // }, [props[0].route.params.userId])
 
     return (loading ? "Loading" : <SubjectsPage data={subjects} />)
 }
